@@ -7,12 +7,43 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,700i&display=swap');
+</style> 
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <div class="header">
+      <div class="logo">
+        <%=image_tag "logo3.png" %>
+      </div>
+      <div class="menu">
+      <ul>
+        <% if user_signed_in? %>
+     <li class="inside"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+      <li ><span>Здравствуйте <%= current_user.email %></span></li>
+     
+    
+    <!-- <span>Здравствуйте, <%= current_user.email %></span> -->
+    
+<% else %>
+<li class="outside"><%= link_to 'Войти', new_user_session_path %></li>
+<li class="outside"><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+<% end %>
+</ul>
+</div>
 
+ </div>
+ <div class="content">
+<% flash.each do |type, msg| %>
+
+ <div class="alert <%= bootstrap_msg(type) %>" ><%= msg %></div>
+ 
+  <% end %>
+  
+ 
     <%= yield %>
+    </div>
   </body>
 </html>

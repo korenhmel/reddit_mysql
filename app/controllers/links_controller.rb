@@ -15,9 +15,9 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    @link = Link.new
+    # @link = Link.new
+    @link = current_user.links.build
   end
-
   # GET /links/1/edit
   def edit
   end
@@ -25,11 +25,12 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    # @link = Link.new(link_params)
+    @link = current_user.links.build(link_params)
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        format.html { redirect_to @link, notice:'Link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
@@ -43,10 +44,10 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        format.html { redirect_to @link, notice: 'Link was successfully updated.' }
+        format.html { redirect_to @link, notice:'Link was successfully updated.' }
         format.json { render :show, status: :ok, location: @link }
       else
-        format.html { render :edit }
+        format.html { render :edit, error: "something went wrong!!" }
         format.json { render json: @link.errors, status: :unprocessable_entity }
       end
     end
@@ -70,6 +71,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url)
+      params.require(:link).permit(:title, :url, :image)
     end
 end
