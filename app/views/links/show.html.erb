@@ -1,18 +1,21 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="show">
-<div class="show_image"><%= @link.title %>
-	<%= image_tag @link.image.url(:medium) %>
+<!-- div class="show_image"><%= @link.title %> -->
+	<%= link_to (image_tag @link.image.url(:medium)), @link.url, rel: "nofollow noopener noreferrer", target: "blank" %>
 	
 <p>
   <!-- strong>Url:</strong> -->
  <%= link_to  @link.url, @link.url, rel: "nofollow noopener noreferrer", target: "blank" %>
 </p>
-</div>
-  <!-- <strong>Title:</strong> -->
+
+
+            <% if current_user == @link.user %>
+        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(@link) %></button>
+      
+        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
    
+			<% end %>
 
 
-
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+ <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Back', links_path %></button>
 </div>

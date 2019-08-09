@@ -21,6 +21,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :description %>
+  <%= form.text_area(:description, :size => "50x10")  %>
+  </div>
+
+  <div class="field">
     <%= form.label :url %>
     <%= form.text_field :url %>
   </div>

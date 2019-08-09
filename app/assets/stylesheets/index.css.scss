@@ -6,7 +6,14 @@
 	width: 100%;
 	height: 80px;
 	 border: 2px solid grey;
+	 margin: 10px;
 	
+}
+
+
+
+body{
+	margin: 0;
 }
 
 /*.list_actions{
@@ -25,4 +32,15 @@ h2{
 	display: block;
  /*text-align: center;*/
  padding-left: 50px;
+}
+
+p{
+	padding: 0 10px;
+}
+.content_image{
+	text-align: center;
+}
+
+tr{
+	border-bottom: 2px solid grey;
 }

@@ -1,6 +1,6 @@
 
 
-<table border="1"  >
+<table  >
   <!-- <thead>
     <tr>
       <th>Image</th>
@@ -12,37 +12,30 @@
   <tbody> -->
 
   <% @links.each do |link| %>
-    <tr class="cicle">
-    
-        <!-- <td> <%= image_tag(link.image.url(:thumb)) %></td> -->
-         
-        <td><%=link_to (image_tag(link.image.url(:thumb))), link.url, rel: "nofollow noopener noreferrer",
-target: "blank"  %>
+  
+    <tr>  
+        <td class="content_image"><%=link_to (image_tag(link.image.url(:thumb_plus))), link.url, rel: "nofollow noopener noreferrer",
+        target: "blank"  %>
 </td>
-    <td class="second"><h2><%= link_to link.title, link_path(link) %></h1> 
+
+ <td class="second"><h2><%= link_to link.title, link_path(link) %></h1> 
+      <p><%= link.description %></p>
 
   
-  <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Show', link %></button>
+      <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
+        
             <% if current_user == link.user %>
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(link) %></button>
+
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-        </div>
+        <!-- </div> -->
 </td>
-
-         
-         
-
-        
-
-      </tr>
-      
-      
-       
+      </tr>    
       <% end %>
     <% end %>
-  </tbody>
+ 
 </table>
+</div>
 
 <br>
 
