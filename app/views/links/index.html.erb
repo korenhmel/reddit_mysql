@@ -26,6 +26,7 @@
         
             <% if current_user == link.user %>
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(link) %></button>
+        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit Profile', edit_user_registration_path %></button>
 
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
         <!-- </div> -->
