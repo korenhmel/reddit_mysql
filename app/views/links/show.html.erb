@@ -6,16 +6,25 @@
 <p>
   <!-- strong>Url:</strong> -->
  <%= link_to  @link.url, @link.url, rel: "nofollow noopener noreferrer", target: "blank" %>
-</p>
-
-
-            <% if current_user == @link.user %>
+</p> 
+<% if current_user == @link.user %>
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(@link) %></button>
       
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
    
 			<% end %>
 
-
  <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Back', links_path %></button>
+
+ <h2>Description</h2>
+
+<p><%= @link.description %></p>
+
+  <h2>Comments</h2>
+ 
+ <%= render partial: 'links/comments' %>
+<%= render partial: 'links/comments_form' %>
 </div>
+            
+
+

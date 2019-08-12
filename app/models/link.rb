@@ -3,4 +3,5 @@ class Link < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	validates :title, :url, presence: true
 	belongs_to :user
+	has_many :comments
 end
