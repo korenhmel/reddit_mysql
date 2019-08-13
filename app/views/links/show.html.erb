@@ -21,6 +21,7 @@
 <p><%= @link.description %></p>
 
   <h2>Comments</h2>
+  <p> <%= @link.comments.count %> comments.</p>
  
  <%= render partial: 'links/comments' %>
 <%= render partial: 'links/comments_form' %>
