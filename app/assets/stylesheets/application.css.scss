@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+@import "bootstrap";   
+@import 'bootstrap/glyphicons';
 
 
 
@@ -72,6 +73,18 @@ li span {
 	font-size: 20px;
 	
 
+}
+.btn a{
+	text-decoration: none;
+	background: none;
+}
+.content_image a{
+	text-decoration: none;
+	background: none;
+}
+.menu a{
+	text-decoration: none;
+	background: none;
 }
 
 .outside {

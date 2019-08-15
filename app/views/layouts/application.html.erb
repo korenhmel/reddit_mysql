@@ -18,10 +18,24 @@
       <div class="logo">
         <%=image_tag "logo3.png" %>
       </div>
+
       <div class="menu">
       <ul>
         <% if user_signed_in? %>
-     <li class="inside"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+
+
+     <li class="inside"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+      <% if  action_name != "edit" %>
+      <!-- we can use action_name to change notice in our menu depedent of the page -->
+     <li class="inside"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+       <% else %>
+       <li class="inside"><%= link_to 'Back to links list', links_path %></li>
+       <% end %>
+       <% if  action_name == "new" %>
+       <li class="inside"><%= link_to 'Back to links list', links_path %></li>
+       <% else %>
+     <li class="inside"><%= link_to 'New Link', new_link_path %></li>
+     <% end %>
       <li ><span>Здравствуйте <%= current_user.name %></span></li>
      
     

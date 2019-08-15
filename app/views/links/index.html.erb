@@ -14,20 +14,19 @@
    
   
        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to  like_link_path(link), method: :put do %>
-          like
+         likes <span class="glyphicon glyphicon-thumbs-up"></span>
           <%= link.get_upvotes.size %>
           <% end %>
         </button>
 
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to  dislike_link_path(link), method: :put do %>
-          dislike
+          dislike <span class="glyphicon glyphicon-thumbs-down"></span>
           <%= link.get_downvotes.size %>
           <% end %>
         </button>
             <% if current_user == link.user|| current_user.class == User && current_user.admin == true %>
 
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(link) %></button>
-        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit Profile', edit_user_registration_path %></button>
 
         <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
         <!-- </div> -->
@@ -40,7 +39,6 @@
 </div>
 
 <br>
-
 <%= link_to 'New Link', new_link_path %>
 
 
