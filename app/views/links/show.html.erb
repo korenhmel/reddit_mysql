@@ -19,7 +19,7 @@
         		<br>
         		<br>
         		<%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?' } %>
-        		<% end %>
+          <% end %>
 			</div>
 		</td>
 
@@ -31,7 +31,12 @@
   	<p><span class="comments_count"> <%= @link.comments.count %> comments.</span></p>
  
   	<%= render partial: 'links/comments' %>
-  	<%= render partial: 'links/comments_form' %>
+    <%if current_user != nil %>
+  	<%= render partial: 'links/comments_form'  %>
+    <% else %>
+    <p><span class="comments_count"> In order to make comments, you should do registration
+    or log in to your account.</span></p>
+    <% end %>
 </div>
             
 
