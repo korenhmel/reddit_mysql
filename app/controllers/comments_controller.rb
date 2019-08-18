@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :set_link, only: [:create, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
 
   # GET /comments
   # GET /comments.json
  
   def create
-    @link = Link.find(params[:link_id])
+    # @link = Link.find(params[:link_id])
     @comment = @link.comments.new(comment_params)
     @comment.user = current_user
 
@@ -26,8 +28,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to @link, notice: 'Comment was successfully destroyed.' }
+      format.json { render :show }
+       # head :no_content
     end
   end
 
@@ -40,5 +43,9 @@ class CommentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:user_id, :link_id, :body)
+    end
+
+    def set_link
+      @link = Link.find(params[:link_id])
     end
 end

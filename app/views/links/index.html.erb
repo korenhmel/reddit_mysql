@@ -1,6 +1,6 @@
 
 
-<table  >
+<table >
   
 
   <% @links.each do |link| %>
@@ -26,19 +26,21 @@
         </button>
             <% if current_user == link.user|| current_user.class == User && current_user.admin == true %>
 
-        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Edit', edit_link_path(link) %></button>
-
-        <button type="button" class="btn btn-outline-info btn-sm"><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-        <!-- </div> -->
+      
 </td>
+<td class="third">
+ <%= link_to 'Edit', edit_link_path(link) %> 
+ <br>
+ <br>
+
+        <%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %>
+</td>
+
       </tr>    
       <% end %>
     <% end %>
  
 </table>
 </div>
-
-<br>
-<%= link_to 'New Link', new_link_path %>
 
 

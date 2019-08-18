@@ -26,7 +26,12 @@ body{
 }*/
 
 .second{
-	width: 80%;
+	width: 75%;
+}
+.second a:hover{
+	text-decoration: none;
+	background: none;
+	
 }
 h2{
 	display: block;
@@ -38,8 +43,17 @@ p{
 	padding: 0 10px;
 }
 .content_image{
+	width: 20%;
 	text-align: center;
 }
+.third{
+	width: 5%;
+	text-align: left;
+	font-size: 15px;
+}
+
+
+	
 
 
 tr{

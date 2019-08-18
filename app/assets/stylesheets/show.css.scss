@@ -6,3 +6,58 @@
 }
 
 
+.del_comment a{
+	background: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.del_comment a:hover{
+	text-decoration: none;
+}
+h2{
+	padding-top: 20px;
+
+}
+
+h3{
+    font-size: 20px !important; line-height:20px !important;
+	padding-left: 20px;
+}
+p{
+	font-size: 15px;
+}
+
+span.comments_count{
+	font-style: italic;
+	font-weight: bold;
+}
+
+.buttons_show{
+
+	padding-left: 30px;
+}
+
+.buttons_show a{
+ font-size: 15px;
+ text-decoration: none;
+ background: none;
+ font-weight: bold;
+}
+
+.buttons_show a:hover{
+
+	text-decoration: none;
+	background: none;
+}
+
+.link_back a{
+	font-size: 20px;
+ 	font-weight: bold;
+}
+.link_back a:hover{
+	text-decoration: none;
+	background: none;
+}
+table{
+	margin-bottom: 20px;
+}

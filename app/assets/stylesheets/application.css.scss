@@ -60,12 +60,12 @@ li{
 li span {
 	font-size: 20px;
 	position: relative;
-	top: 10px;
+	top: 20px;
 	padding-left: 150px;
 }
 .inside {
 	position: relative;
-	top: 10px;
+	top: 20px;
 	display: inline-block;
 	float: right; 
 	padding-left: 40px;
@@ -86,8 +86,12 @@ li span {
 	text-decoration: none;
 	background: none;
 }
+.third a{
+	text-decoration: none;
+	background: none;
+}
 
-.outside {
+/*.outside {
 	display: inline-block;
 	float: right; 
 	padding-left: 40px;
@@ -95,7 +99,7 @@ li span {
 	font-size: 20px;
 
 }
-
+*/
 
 
 .content{
@@ -111,3 +115,4 @@ td{
 	height: 20px;
  width: auto;
 }
+
