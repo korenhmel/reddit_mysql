@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>RedditMysql</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="aK7PvXaCk2FLUOEuyyv3cgMHId6gonp9wL6Mlp/jUw4iRqdQkR6SkKPxwgkXXti32ZBxIUZwglVb31tQjwsN6Q==">
+    
+
+    <link rel="stylesheet" media="all" href="RedditMysql_files/comments.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="RedditMysql_files/index.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="RedditMysql_files/links.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="RedditMysql_files/scaffolds.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="RedditMysql_files/show.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="RedditMysql_files/application.css" data-turbolinks-track="reload">
+    <script src="RedditMysql_files/rails-ujs.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/activestorage.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/turbolinks.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/action_cable.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/cable.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/comments.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/links.js" data-turbolinks-track="reload"></script>
+<script src="RedditMysql_files/application.js" data-turbolinks-track="reload"></script>
+
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,700i&display=swap');
+</style> 
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="RedditMysql_files/logo3-88450d8212cdd3835a25920e7afdd9696c288dea69b246a824cc70.png">
+      </div>
+
+      <div class="menu">
+      <ul>
+
+
+     <li class="inside"><a rel="nofollow" data-method="delete" href="http://localhost:3000/users/sign_out">Sign out</a></li>
+      <!-- we can use action_name to change notice in our menu depedent of the page -->
+     <li class="inside"><a href="http://localhost:3000/users/edit">Edit Profile</a></li>
+     <li class="inside"><a href="http://localhost:3000/links/new">New Link</a></li>
+      <li><span>Здравствуйте Корень</span></li>
+     
+    
+    <!-- <span>Здравствуйте, koren.hmel@gmail.com</span> -->
+    
+</ul>
+</div>
+
+ </div>
+ <div class="content">
+  
+ 
+    <div class="link_form">
+<h1>Editing Link</h1>
+
+
+<form enctype="multipart/form-data" action="/links/5" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="aK7PvXaCk2FLUOEuyyv3cgMHId6gonp9wL6Mlp/jUw4iRqdQkR6SkKPxwgkXXti32ZBxIUZwglVb31tQjwsN6Q==">
+    <div id="error_explanation">
+      <h2>1 error prohibited this link from being saved:</h2>
+
+      <ul>
+        <li>Description can't be blank</li>
+      </ul>
+    </div>
+  
+  <div class="field">
+    <label for="link_image">Image</label>:
+    <br>
+    <input type="file" name="link[image]" id="link_image">
+  
+  </div>
+  <div class="form-group">
+   <label for="link_title">Title</label>
+   <input class="form-control" type="text" value="Цензор.нет" name="link[title]" id="link_title">
+    
+  </div>
+
+  <div class="form-group">
+    <div class="field_with_errors"><label for="link_description">Description</label></div>
+    <br>
+  <div class="field_with_errors"><textarea class="form-control" name="link[description]" id="link_description">Новостной украинский сайт освещающий событие как в украине так и во всем мире.</textarea></div>
+  </div>
+
+  <div class="form-group">
+    <label for="link_url">Url</label>
+    <br>
+    <input class="form-control" type="text" value="https://censor.net.ua/" name="link[url]" id="link_url">
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Submit" class="btn btn-lg btn-primary" data-disable-with="Submit">
+  </div>
+ 
+</form>
+<a href="http://localhost:3000/links/5">Show</a> |
+<a href="http://localhost:3000/links">Back</a>
+</div>
+    </div>
+  
+
+</body></html>
